@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4ceko3jygnnk"]
+[gd_scene load_steps=4 format=3 uid="uid://d4ceko3jygnnk"]
 
 [ext_resource type="PackedScene" uid="uid://bfodj4np25lac" path="res://scenes/floor.tscn" id="1_u5d52"]
 [ext_resource type="PackedScene" uid="uid://b7oauumwgh4tk" path="res://scenes/shinobi.tscn" id="2_pnbic"]
+[ext_resource type="PackedScene" uid="uid://bnhuq40w3a7se" path="res://scenes/enemie.tscn" id="3_mmq0e"]
 
-[node name="mundo" type="Node2D"]
+[node name="pruebas" type="Node2D"]
 
 [node name="floor" parent="." instance=ExtResource("1_u5d52")]
 position = Vector2(8, 544)
 
 [node name="shinobi" parent="." instance=ExtResource("2_pnbic")]
 position = Vector2(47, 354)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_mmq0e")]
+position = Vector2(839, 443)

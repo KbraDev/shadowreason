@@ -10,6 +10,9 @@ var can_attack = true
 var is_attacking = false
 var attack_reset_time = 2.0 # Tiempo de inactividad para reiniciar ataques
 
+@onready var attack_area = $AttackArea2D
+@onready var attack_area_shape = attack_area.get_node("CollisionShape2D")
+
 @onready var animation = $AnimatedSprite2D
 @onready var reset_attack_timer = Timer.new()
 
@@ -28,6 +31,10 @@ func _ready() -> void:
 	reset_attack_timer.one_shot = true
 	reset_attack_timer.wait_time = attack_reset_time
 	reset_attack_timer.connect("timeout", Callable(self, "_on_reset_attack_timer_timeout"))
+	
+	# conectar la senal body_entered del Area2D
+	attack_area.connect("body_entered", Callable(self, "_on_attack_area_2d_body_entered"))
+
 
 func _physics_process(delta: float) -> void:
 	handle_gravity(delta)
@@ -82,6 +89,14 @@ func handle_attack() -> void:
 		2:
 			current_animation = "attack3"
 	animation.play(current_animation)
+	
+	#activar el area2d
+	attack_area.monitoring = true
+	
+	if attack_area.monitoring == false:
+		print("desactivada")
+	else: 
+		print("ataque activa la area2d")
 
 	# Incrementar el estado de ataque
 	attack_state = (attack_state + 1) % 3
@@ -94,11 +109,20 @@ func handle_attack() -> void:
 
 	# Iniciar un temporizador para finalizar el ataque y reactivar el ataque
 	await get_tree().create_timer(animation_duration).timeout
+	
+	# desactivar el area2d
+	attack_area.monitoring = false
+	
 	is_attacking = false
-
+	
 	await get_tree().create_timer(attack_cooldown).timeout
 	can_attack = true
 
 func _on_reset_attack_timer_timeout() -> void:
 	# Reiniciar el estado de ataque si no se usa en el tiempo definido
 	attack_state = 0
+
+
+func _on_attack_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemies"):
+		print("ataque al enemigo: ", body.name)
