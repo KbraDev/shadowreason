@@ -9,4 +9,4 @@
 position = Vector2(8, 544)
 
 [node name="shinobi" parent="." instance=ExtResource("2_pnbic")]
-position = Vector2(140, 56)
+position = Vector2(47, 354)
