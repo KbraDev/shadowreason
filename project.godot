@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="shadowreason"
+config/name="ringosreason"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,10 @@ folder_colors={
 "res://scripts/": "yellow",
 "res://sprites/": "purple"
 }
+
+[global_group]
+
+enemies=""
 
 [input]
 
