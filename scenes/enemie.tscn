@@ -4,26 +4,34 @@
 [ext_resource type="Script" path="res://scenes/enemie.gd" id="1_ve3km"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84vuc"]
-size = Vector2(171, 157)
+size = Vector2(89.75, 87.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5evuf"]
-size = Vector2(165, 165)
+size = Vector2(91, 89)
 
 [node name="enemie" type="CharacterBody2D" groups=["enemies"]]
 script = ExtResource("1_ve3km")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.34375, 1.34375)
+scale = Vector2(0.757813, 0.757813)
 texture = ExtResource("1_cyphr")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 0.5)
+position = Vector2(0.125, 0.125)
 shape = SubResource("RectangleShape2D_84vuc")
 debug_color = Color(0.854361, 0.30495, 0.537243, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, 0.5)
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_5evuf")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -55.0
+offset_top = -89.0
+offset_right = 56.0
+offset_bottom = -62.0
+value = 100.0
+rounded = true
