@@ -310,8 +310,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7jhi"]
 size = Vector2(32, 99)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_j4y2a"]
-radius = 54.0833
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymw0o"]
+radius = 34.0
+height = 166.0
 
 [node name="shinobi" type="CharacterBody2D"]
 script = ExtResource("1_cck50")
@@ -334,7 +335,8 @@ visibility_layer = 65
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D"]
-position = Vector2(0, 40)
-shape = SubResource("CircleShape2D_j4y2a")
+position = Vector2(0, 26)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ymw0o")
 
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]

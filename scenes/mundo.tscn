@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d4ceko3jygnnk"]
 
 [ext_resource type="PackedScene" uid="uid://bfodj4np25lac" path="res://scenes/floor.tscn" id="1_u5d52"]
-[ext_resource type="PackedScene" uid="uid://b7oauumwgh4tk" path="res://scenes/shinobi.tscn" id="2_pnbic"]
+[ext_resource type="PackedScene" uid="uid://b7oauumwgh4tk" path="res://scenes/characters/shinobi.tscn" id="2_pnbic"]
 [ext_resource type="PackedScene" uid="uid://bnhuq40w3a7se" path="res://scenes/enemie.tscn" id="3_mmq0e"]
 
 [node name="pruebas" type="Node2D"]
