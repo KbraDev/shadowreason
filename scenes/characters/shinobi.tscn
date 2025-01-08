@@ -308,25 +308,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7jhi"]
-size = Vector2(24, 71)
+size = Vector2(17, 46)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymw0o"]
-radius = 27.0
-height = 114.0
+radius = 15.0
+height = 76.0
 
 [node name="shinobi" type="CharacterBody2D"]
 script = ExtResource("1_cck50")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(1.03907, 1.03907)
+scale = Vector2(0.699223, 0.699223)
 sprite_frames = SubResource("SpriteFrames_8uhad")
-animation = &"attack1"
-frame = 4
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 29.5)
+position = Vector2(0, 22)
 shape = SubResource("RectangleShape2D_s7jhi")
 
 [node name="AttackArea2D" type="Area2D" parent="."]
@@ -335,10 +333,12 @@ visibility_layer = 65
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D"]
-position = Vector2(2, 25)
+position = Vector2(1, 16)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ymw0o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.4, 1.4)
+position_smoothing_enabled = true
 
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]
