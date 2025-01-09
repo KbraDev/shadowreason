@@ -419,7 +419,7 @@ texture_filter = 1
 scale = Vector2(0.451174, 0.451174)
 sprite_frames = SubResource("SpriteFrames_8uhad")
 animation = &"walk"
-frame_progress = 0.772874
+frame_progress = 0.30414
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)
@@ -436,6 +436,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ymw0o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -30)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
