@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b7oauumwgh4tk"]
+[gd_scene load_steps=63 format=3 uid="uid://b7oauumwgh4tk"]
 
 [ext_resource type="Script" path="res://scripts/shadow.gd" id="1_cck50"]
 [ext_resource type="Texture2D" uid="uid://c75pe5amgok08" path="res://sprites/Shinobi/Attack_1.png" id="2_ioh4i"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dv1d72gk08ci0" path="res://sprites/Shinobi/Jump.png" id="3_snxxa"]
 [ext_resource type="Texture2D" uid="uid://dqgdmkt24upqj" path="res://sprites/Shinobi/Run.png" id="3_vaty6"]
 [ext_resource type="Texture2D" uid="uid://6kmtw0x53wsv" path="res://sprites/Shinobi/Attack_3.png" id="4_scjpv"]
+[ext_resource type="Texture2D" uid="uid://bx6cjjdc25tma" path="res://sprites/Shinobi/Shield.png" id="8_tarlc"]
+[ext_resource type="Texture2D" uid="uid://c1tndtt75hrsu" path="res://sprites/Shinobi/Walk.png" id="9_u0dw2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0ops"]
 atlas = ExtResource("2_ioh4i")
@@ -160,6 +162,54 @@ region = Rect2(768, 0, 128, 128)
 atlas = ExtResource("3_vaty6")
 region = Rect2(896, 0, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_onnl5"]
+atlas = ExtResource("8_tarlc")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ctbi"]
+atlas = ExtResource("8_tarlc")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro4de"]
+atlas = ExtResource("8_tarlc")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co8x7"]
+atlas = ExtResource("8_tarlc")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n13fx"]
+atlas = ExtResource("9_u0dw2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjxna"]
+atlas = ExtResource("9_u0dw2")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xg5r"]
+atlas = ExtResource("9_u0dw2")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_048a5"]
+atlas = ExtResource("9_u0dw2")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogsjo"]
+atlas = ExtResource("9_u0dw2")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0g33"]
+atlas = ExtResource("9_u0dw2")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2un8d"]
+atlas = ExtResource("9_u0dw2")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwur2"]
+atlas = ExtResource("9_u0dw2")
+region = Rect2(896, 0, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8uhad"]
 animations = [{
 "frames": [{
@@ -305,6 +355,52 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onnl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ctbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro4de")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co8x7")
+}],
+"loop": true,
+"name": &"shield",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n13fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjxna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xg5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_048a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogsjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0g33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2un8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwur2")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 14.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0gjj2"]
@@ -322,7 +418,8 @@ script = ExtResource("1_cck50")
 texture_filter = 1
 scale = Vector2(0.451174, 0.451174)
 sprite_frames = SubResource("SpriteFrames_8uhad")
-animation = &"idle"
+animation = &"walk"
+frame_progress = 0.772874
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)

@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
-const speed = 200.0
+const speed = 100.0
+const run_speed = 250.0
 const jump_velocity = -250.0
+
+# variables de control
+var can_jump = true
 
 # Variables de ataques
 var attack_state = 0
@@ -44,6 +48,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack") and can_attack:
 		handle_attack()
 	move_and_slide()
+	reset_jump()
 
 func handle_gravity(delta: float) -> void:
 	if not is_on_floor():
@@ -51,27 +56,48 @@ func handle_gravity(delta: float) -> void:
 
 func handle_movement() -> void:
 	# Saltos
-	if Input.is_action_just_pressed("jump") and not is_attacking:
+	if Input.is_action_just_pressed("jump") and can_jump and not is_attacking:
 		velocity.y = jump_velocity
+		can_jump = false
 
-	# Movimiento horizontal
-	var direction = 0
+	## Movimiento horizontal
+	#var direction = 0
+	#if Input.is_action_pressed("move_left"):
+		#direction -= 1
+	#if Input.is_action_pressed("move_right"):
+		#direction += 1
+	
+	#movimiento horizontal con correr
+	var direction = 0 
 	if Input.is_action_pressed("move_left"):
 		direction -= 1
 	if Input.is_action_pressed("move_right"):
 		direction += 1
+	
+	var current_speed = speed
+	if Input.is_action_pressed("run"):
+		current_speed = run_speed
 
-	velocity.x = direction * speed if direction != 0 else move_toward(velocity.x, 0, speed)
+	velocity.x = direction * current_speed if direction != 0 else move_toward(velocity.x, 0, speed)
+
 
 	# Voltear el sprite según la dirección
 	if direction != 0:
 		animation.flip_h = direction < 0
 
+# funcion para reiniciar salto
+func reset_jump() -> void: 
+	if is_on_floor():
+		can_jump = true
+
 func handle_animation() -> void:
 	if not is_on_floor():
 		animation.play("jump")
 	elif velocity.x != 0:
-		animation.play("run")
+		if Input.is_action_pressed("run"):
+			animation.play("run")
+		else: 
+			animation.play("walk")
 	else:
 		animation.play("idle")
 
