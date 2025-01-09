@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const speed = 400.0
-const jump_velocity = -400.0
+const speed = 200.0
+const jump_velocity = -250.0
 
 # Variables de ataques
 var attack_state = 0
