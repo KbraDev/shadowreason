@@ -59,6 +59,10 @@ func handle_movement() -> void:
 	if Input.is_action_just_pressed("jump") and can_jump and not is_attacking:
 		velocity.y = jump_velocity
 		can_jump = false
+		
+	if is_attacking:
+		velocity.x = 0
+		return
 
 	## Movimiento horizontal
 	#var direction = 0
