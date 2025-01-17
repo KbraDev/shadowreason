@@ -371,7 +371,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"shield",
-"speed": 12.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -418,10 +418,10 @@ script = ExtResource("1_cck50")
 texture_filter = 1
 scale = Vector2(0.451174, 0.451174)
 sprite_frames = SubResource("SpriteFrames_8uhad")
-animation = &"walk"
-frame_progress = 0.30414
+animation = &"attack1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 12)
 shape = SubResource("CapsuleShape2D_0gjj2")
 
@@ -431,6 +431,7 @@ visibility_layer = 65
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D"]
+visible = false
 position = Vector2(0, 12)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ymw0o")
