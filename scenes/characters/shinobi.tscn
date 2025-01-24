@@ -442,4 +442,7 @@ zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 36)
+
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]

@@ -20,6 +20,9 @@ var attack_reset_time = 2.0 # Tiempo de inactividad para reiniciar ataques
 @onready var animation = $AnimatedSprite2D
 @onready var reset_attack_timer = Timer.new()
 
+# Manejo de rampas (descender)
+@onready var ray_cast_down = $RayCast2D
+
 # Diccionario con la duración de cada animación
 var animation_durations = {
 	"attack1": 0.5,
