@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const speed = 100.0
 const run_speed = 250.0
-const jump_velocity = -250.0
+const jump_velocity = -350.0
 
 # variables de control
 var can_jump = true
