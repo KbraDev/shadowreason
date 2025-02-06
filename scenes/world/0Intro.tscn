@@ -80,7 +80,7 @@ tile_set = ExtResource("5_4h7dt")
 position = Vector2(-954, 92)
 
 [node name="nextlevel" type="Area2D" parent="."]
-position = Vector2(3654, 883)
+position = Vector2(3654, 777)
 script = ExtResource("7_l0bac")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="nextlevel"]
