@@ -1,9 +1,76 @@
-[gd_scene load_steps=3 format=4 uid="uid://cfdabs50b60m6"]
+[gd_scene load_steps=9 format=4 uid="uid://cfdabs50b60m6"]
 
+[ext_resource type="Texture2D" uid="uid://bi66vcbit25lg" path="res://assets/backgrouds/layers1/sky.png" id="1_6kwwj"]
 [ext_resource type="TileSet" uid="uid://cmfs2bmh3512i" path="res://assets/tiles/forestTile.tres" id="2_2e6fm"]
+[ext_resource type="Texture2D" uid="uid://cw5x5vvoxr6cw" path="res://assets/backgrouds/layers1/clouds_4.png" id="2_rtadq"]
 [ext_resource type="PackedScene" uid="uid://b7oauumwgh4tk" path="res://scenes/characters/shinobi.tscn" id="2_sqast"]
+[ext_resource type="Texture2D" uid="uid://qbtbbp10u7xv" path="res://assets/backgrouds/layers1/rocks_1.png" id="2_vxc8h"]
+[ext_resource type="Texture2D" uid="uid://bqjhsh3jrnftl" path="res://assets/backgrouds/layers1/clouds_2.png" id="3_4ausf"]
+[ext_resource type="Texture2D" uid="uid://30gqpenjaabq" path="res://assets/backgrouds/layers1/rocks_2.png" id="3_ldwam"]
+[ext_resource type="Texture2D" uid="uid://bmr53byhk2hbo" path="res://assets/backgrouds/layers1/clouds_3.png" id="4_4cu75"]
 
 [node name="capa1" type="Node2D"]
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1980, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(960, 947.5)
+scale = Vector2(3.601, 3.47)
+texture = ExtResource("1_6kwwj")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(0, 200)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+texture_filter = 1
+texture = ExtResource("2_vxc8h")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(0, 200)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer3"]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("3_ldwam")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer4"]
+texture_filter = 1
+texture = ExtResource("2_rtadq")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer5"]
+texture_filter = 1
+texture = ExtResource("3_4ausf")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer6"]
+texture_filter = 1
+texture = ExtResource("4_4cu75")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer7"]
+texture = ExtResource("2_rtadq")
 
 [node name="shinobi" parent="." instance=ExtResource("2_sqast")]
 position = Vector2(0, -75)
