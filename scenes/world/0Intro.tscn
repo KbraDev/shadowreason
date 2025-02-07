@@ -62,6 +62,12 @@ tile_set = ExtResource("5_4h7dt")
 [node name="shinobi" parent="." instance=ExtResource("6_b4q1r")]
 position = Vector2(-954, 92)
 
+[node name="Camera2D" type="Camera2D" parent="shinobi"]
+offset = Vector2(40, -50)
+zoom = Vector2(1.8, 1.8)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
 [node name="nextlevel" type="Area2D" parent="."]
 position = Vector2(3654, 777)
 script = ExtResource("7_l0bac")

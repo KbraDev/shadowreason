@@ -404,7 +404,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0gjj2"]
-radius = 8.0
+radius = 7.0
 height = 42.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymw0o"]
@@ -432,11 +432,5 @@ monitoring = false
 position = Vector2(0, 12)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_ymw0o")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(40, -50)
-zoom = Vector2(1.8, 1.8)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]
