@@ -14,14 +14,15 @@ var can_attack = true
 var is_attacking = false
 var attack_reset_time = 2.0 # Tiempo de inactividad para reiniciar ataques
 
+# Variables de gravedad
+var gravity = 980.0 # Valor normal de la gravedad
+var is_gravity_inverted = false # Para saber si la gravedad esta invertida
+
 @onready var attack_area = $AttackArea2D
 @onready var attack_area_shape = attack_area.get_node("CollisionShape2D")
 
 @onready var animation = $AnimatedSprite2D
 @onready var reset_attack_timer = Timer.new()
-
-# Manejo de rampas (descender)
-@onready var ray_cast_down = $RayCast2D
 
 # Diccionario con la duración de cada animación
 var animation_durations = {
@@ -40,7 +41,8 @@ func _ready() -> void:
 	reset_attack_timer.connect("timeout", Callable(self, "_on_reset_attack_timer_timeout"))
 	
 	# conectar la senal body_entered del Area2D
-	attack_area.connect("body_entered", Callable(self, "_on_attack_area_2d_body_entered"))
+	if not attack_area.is_connected("body_entered", Callable(self, "on_attack_area_2d_body_entered")):
+		attack_area.connect("body_entered", Callable(self, "on_attack_area_2d_body_entered"))
 
 
 func _physics_process(delta: float) -> void:
@@ -55,7 +57,8 @@ func _physics_process(delta: float) -> void:
 
 func handle_gravity(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		# Aplicar la gravedad segun si esta invertida
+		velocity.y += gravity * delta * (-1 if is_gravity_inverted else 1)
 
 func handle_movement() -> void:
 	# Saltos
@@ -98,7 +101,9 @@ func reset_jump() -> void:
 		can_jump = true
 
 func handle_animation() -> void:
-	if not is_on_floor():
+	var on_ground = is_on_floor() if not is_gravity_inverted else is_on_ceiling()
+	
+	if not on_ground:
 		animation.play("jump")
 	elif velocity.x != 0:
 		if Input.is_action_pressed("run"):
