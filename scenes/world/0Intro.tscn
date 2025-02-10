@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cw5x5vvoxr6cw" path="res://assets/backgrouds/layers1/clouds_4.png" id="4_chte6"]
 [ext_resource type="TileSet" uid="uid://cmfs2bmh3512i" path="res://assets/tiles/forestTile.tres" id="5_4h7dt"]
 [ext_resource type="PackedScene" uid="uid://b7oauumwgh4tk" path="res://scenes/characters/shinobi.tscn" id="6_b4q1r"]
-[ext_resource type="Script" path="res://scripts/nextlevel.gd" id="7_l0bac"]
+[ext_resource type="Script" path="res://scripts/nextlevels/nextlevel.gd" id="7_l0bac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2ejm"]
 size = Vector2(243.75, 110.25)

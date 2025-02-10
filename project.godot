@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Transition="*res://scripts/nextlevel.gd"
+Transition="*res://scripts/nextlevels/nextlevel.gd"
 
 [file_customization]
 
