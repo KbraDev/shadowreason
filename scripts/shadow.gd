@@ -63,7 +63,7 @@ func handle_gravity(delta: float) -> void:
 func handle_movement() -> void:
 	# Saltos
 	if Input.is_action_just_pressed("jump") and can_jump and not is_attacking:
-		velocity.y = jump_velocity
+		velocity.y = jump_velocity * (-1 if is_gravity_inverted else 1)
 		can_jump = false
 		
 	if is_attacking:
@@ -97,7 +97,7 @@ func handle_movement() -> void:
 
 # funcion para reiniciar salto
 func reset_jump() -> void: 
-	if is_on_floor():
+	if is_on_floor() or (is_gravity_inverted and is_on_ceiling()):
 		can_jump = true
 
 func handle_animation() -> void:
