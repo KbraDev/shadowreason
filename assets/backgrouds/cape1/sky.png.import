@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddbu5xulpyobo"
-path="res://.godot/imported/Tilesheet - WOODS.png-4fe040eda5e48079397993e8c335764d.ctex"
+uid="uid://bi66vcbit25lg"
+path="res://.godot/imported/sky.png-0dd8549d90cf575f67081b3f86cee844.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/Tilesheet - WOODS.png"
-dest_files=["res://.godot/imported/Tilesheet - WOODS.png-4fe040eda5e48079397993e8c335764d.ctex"]
+source_file="res://assets/backgrouds/cape1/sky.png"
+dest_files=["res://.godot/imported/sky.png-0dd8549d90cf575f67081b3f86cee844.ctex"]
 
 [params]
 
