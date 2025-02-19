@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cmfs2bmh3512i"]
 
-[ext_resource type="Texture2D" uid="uid://cfihsm102ecbf" path="res://assets/tiles/caves/main_lev_buildA.png" id="2_puctj"]
+[ext_resource type="Texture2D" uid="uid://cfihsm102ecbf" path="res://assets/tiles/main_lev_buildA.png" id="1_r087p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_35jpo"]
-texture = ExtResource("2_puctj")
+texture = ExtResource("1_r087p")
 1:1/0 = 0
 38:1/0 = 0
 40:1/0 = 0

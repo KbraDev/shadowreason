@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfihsm102ecbf"
-path="res://.godot/imported/main_lev_buildA.png-cbd9fa64d0c91adc821280e04f5a1d5a.ctex"
+uid="uid://d4bjli55r81mp"
+path="res://.godot/imported/background1.png-1a74afe191abe277b9487a8f2517b7fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/caves/main_lev_buildA.png"
-dest_files=["res://.godot/imported/main_lev_buildA.png-cbd9fa64d0c91adc821280e04f5a1d5a.ctex"]
+source_file="res://assets/tiles/caves/background1.png"
+dest_files=["res://.godot/imported/background1.png-1a74afe191abe277b9487a8f2517b7fc.ctex"]
 
 [params]
 
