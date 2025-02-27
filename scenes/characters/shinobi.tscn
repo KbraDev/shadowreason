@@ -1,6 +1,6 @@
 [gd_scene load_steps=63 format=3 uid="uid://b7oauumwgh4tk"]
 
-[ext_resource type="Script" path="res://scripts/shadow.gd" id="1_cck50"]
+[ext_resource type="Script" path="res://scripts/scriptsCharacters/shadow.gd" id="1_cck50"]
 [ext_resource type="Texture2D" uid="uid://c75pe5amgok08" path="res://sprites/Shinobi/Attack_1.png" id="2_ioh4i"]
 [ext_resource type="Texture2D" uid="uid://brquyrd451430" path="res://sprites/Shinobi/Attack_2.png" id="3_o2gdj"]
 [ext_resource type="Texture2D" uid="uid://dv1d72gk08ci0" path="res://sprites/Shinobi/Jump.png" id="3_snxxa"]
