@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const speed = 100.0
-const run_speed = 250.0
+const speed = 75.0
+const run_speed = 200.0
 const jump_velocity = -350.0
 
 # variables de control

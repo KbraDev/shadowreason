@@ -405,23 +405,24 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0gjj2"]
 radius = 8.0
-height = 44.0
+height = 52.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymw0o"]
-height = 42.0
+radius = 9.0
+height = 56.0
 
 [node name="shinobi" type="CharacterBody2D" groups=["jugador"]]
 script = ExtResource("1_cck50")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.561525, 0.561525)
+scale = Vector2(0.687012, 0.687012)
 sprite_frames = SubResource("SpriteFrames_8uhad")
 animation = &"idle"
 frame_progress = 0.188288
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 15)
+position = Vector2(0, 18)
 shape = SubResource("CapsuleShape2D_0gjj2")
 
 [node name="AttackArea2D" type="Area2D" parent="."]
