@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://7odf4aogjgj7"]
+[gd_scene load_steps=3 format=3 uid="uid://bire3yahjx16v"]
 
-[ext_resource type="Texture2D" uid="uid://ek1x57vcte7g" path="res://sprites/objects/elevator.png" id="1_u1vcv"]
+[ext_resource type="Texture2D" uid="uid://ek1x57vcte7g" path="res://sprites/objects/elevator.png" id="1_w8fvk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_trtjp"]
-size = Vector2(124, 17)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knpgg"]
+size = Vector2(124, 18)
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="StaticBody2D" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_u1vcv")
+position = Vector2(0, 220)
+texture = ExtResource("1_w8fvk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -228.5)
-shape = SubResource("RectangleShape2D_trtjp")
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_knpgg")
