@@ -1,9 +1,10 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dgkuk8i4ddgfg"]
 
-[ext_resource type="Texture2D" uid="uid://cfihsm102ecbf" path="res://assets/tiles/forest/floor.png" id="1_hussk"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v40l1"]
+load_path = "res://.godot/imported/floor.png-25296b27282b9c16882fda219d08a1ed.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yvo1r"]
-texture = ExtResource("1_hussk")
+texture = SubResource("CompressedTexture2D_v40l1")
 1:1/0 = 0
 38:1/0 = 0
 40:1/0 = 0
@@ -372,6 +373,7 @@ texture = ExtResource("1_hussk")
 71:13/0 = 0
 71:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 72:13/0 = 0
+72:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 75:13/0 = 0
 75:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 76:13/0 = 0
