@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-const speed = 75.0
-const run_speed = 200.0
-const jump_velocity = -350.0
+const speed = 100.0
+const run_speed = 250.0
+const jump_velocity = -400.0
+const jump_cut_multiplier = 0.5 
 
 # variables de control
 var can_jump = true
@@ -61,11 +62,16 @@ func handle_gravity(delta: float) -> void:
 		velocity.y += gravity * delta * (-1 if is_gravity_inverted else 1)
 
 func handle_movement() -> void:
-	# Saltos
+	# Manejo del salto variable
 	if Input.is_action_just_pressed("jump") and can_jump and not is_attacking:
 		velocity.y = jump_velocity * (-1 if is_gravity_inverted else 1)
 		can_jump = false
-		
+	
+	# Si el juegodor suelta la tecla de salto y sigue en ascenso, cortar el salto
+	if Input.is_action_just_released("jump") and velocity.y < 0:
+		velocity.y *= jump_cut_multiplier
+
+	# Bloquea el movimiento si esta atacando
 	if is_attacking:
 		velocity.x = 0
 		return
@@ -95,7 +101,7 @@ func handle_movement() -> void:
 	if direction != 0:
 		animation.flip_h = direction < 0
 
-# funcion para reiniciar salto
+# funcion para reiniciar salto cuando toca el suelo o el techo si la gravedad esta invertida
 func reset_jump() -> void: 
 	if is_on_floor() or (is_gravity_inverted and is_on_ceiling()):
 		can_jump = true
