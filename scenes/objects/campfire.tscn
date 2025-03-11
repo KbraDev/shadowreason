@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://brarl8a1setqi"]
+
+[ext_resource type="Script" path="res://scripts/objects/campfire/campfire.gd" id="1_2d23p"]
+[ext_resource type="Texture2D" uid="uid://cxxtxasfx7eaq" path="res://sprites/objects/campfire-sprite-sheet.png" id="2_6qioq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pk"]
+atlas = ExtResource("2_6qioq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r5qu"]
+atlas = ExtResource("2_6qioq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6anie"]
+atlas = ExtResource("2_6qioq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtlbo"]
+atlas = ExtResource("2_6qioq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uk4i6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r5qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6anie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtlbo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fg031"]
+radius = 1.41421
+
+[sub_resource type="Gradient" id="Gradient_e2r33"]
+offsets = PackedFloat32Array(0.411765, 0.716578)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qyr67"]
+gradient = SubResource("Gradient_e2r33")
+width = 120
+height = 120
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("1_2d23p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+texture_filter = 1
+scale = Vector2(1.48077, 1.48077)
+sprite_frames = SubResource("SpriteFrames_uk4i6")
+frame_progress = 0.170018
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 50)
+shape = SubResource("CircleShape2D_fg031")
+
+[node name="PointLight2D" type="PointLight2D" parent="StaticBody2D"]
+position = Vector2(2, -39)
+texture = SubResource("GradientTexture2D_qyr67")
