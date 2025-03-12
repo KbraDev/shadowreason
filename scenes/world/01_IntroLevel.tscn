@@ -440,7 +440,7 @@ scale = Vector2(1.13085, 1.13085)
 texture = ExtResource("5_22uti")
 
 [node name="Tree-Pine21" type="Sprite2D" parent="Tree-Pine00"]
-position = Vector2(4407.18, 26.27)
+position = Vector2(4409.12, 32.4407)
 scale = Vector2(1.13085, 1.13085)
 texture = ExtResource("5_22uti")
 
