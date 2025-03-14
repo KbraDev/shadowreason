@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6e7oqxtrfmax"
-path="res://.godot/imported/farolaJAPO.png-73e81dd2e09455c7fcce7106410ace86.ctex"
+path="res://.godot/imported/farolaJAPO.png-414773910af34926b606853b5f367a71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/objects/farolaJAPO.png"
-dest_files=["res://.godot/imported/farolaJAPO.png-73e81dd2e09455c7fcce7106410ace86.ctex"]
+source_file="res://sprites/objects/elevatorsystem/farolaJAPO.png"
+dest_files=["res://.godot/imported/farolaJAPO.png-414773910af34926b606853b5f367a71.ctex"]
 
 [params]
 

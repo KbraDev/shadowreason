@@ -330,18 +330,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbqok"]
-size = Vector2(124, 6)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n46hu"]
+size = Vector2(124, 5)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-38.8164, 38.8164)
+position = Vector2(0, 60)
 scale = Vector2(1.74618, 1.74618)
 sprite_frames = SubResource("SpriteFrames_jltcm")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-39, 109)
-shape = SubResource("RectangleShape2D_hbqok")
+position = Vector2(0, 130.5)
+shape = SubResource("RectangleShape2D_n46hu")
