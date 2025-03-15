@@ -1,0 +1,328 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd083pexgx1fr"]
+
+[ext_resource type="Texture2D" uid="uid://c38axc0ocmwys" path="res://icon.svg" id="1_fd2tl"]
+[ext_resource type="Texture2D" uid="uid://cqfpr814t1s78" path="res://sprites/objects/elevatorsystem/wire.png" id="2_mq1nv"]
+[ext_resource type="PackedScene" uid="uid://wuuib1iuhkp2" path="res://scenes/objects/elevator/elevator.tscn" id="3_4v81q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5whj"]
+size = Vector2(128, 128)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_riqd4"]
+radius = 4.0
+height = 48.0
+
+[node name="Elevatorsystem" type="Node2D"]
+position = Vector2(290, 71)
+
+[node name="ancla" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ancla"]
+visible = false
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_fd2tl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ancla"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_f5whj")
+
+[node name="wire" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 56)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire"]
+position = Vector2(0, -24)
+node_a = NodePath("../../ancla")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire2" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 104)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire2"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire2"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire2"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire3" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 152)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire3"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire2")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire3"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire3"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire4" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 200)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire4"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire3")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire4"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire4"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire5" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 248)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire5"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire4")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire5"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire5"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire6" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 296)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire6"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire5")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire6"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire6"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire7" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 344)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire7"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire6")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire7"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire7"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire8" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 392)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire8"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire7")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire8"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire8"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire9" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 440)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire9"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire8")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire9"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire9"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire10" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 488)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire10"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire9")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire10"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire10"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire11" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 536)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire11"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire10")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire11"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire11"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire12" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 584)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire12"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire11")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire12"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire12"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire13" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 632)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire13"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire12")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire13"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire13"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire14" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 680)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire14"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire13")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire14"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire14"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire15" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 728)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire15"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire14")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire15"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire15"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="wire16" type="RigidBody2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+texture_filter = 1
+position = Vector2(0, 776)
+collision_layer = 2
+collision_mask = 2
+mass = 2000.0
+
+[node name="PinJoint2D" type="PinJoint2D" parent="wire16"]
+position = Vector2(0, -24)
+node_a = NodePath("../../wire15")
+node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="wire16"]
+texture = ExtResource("2_mq1nv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wire16"]
+shape = SubResource("CapsuleShape2D_riqd4")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_4v81q")]
+position = Vector2(0, 800)
+mass = 4000.0
+freeze = true
+freeze_mode = 1
+
+[node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D"]
+node_a = NodePath("../../wire16")
+node_b = NodePath("..")
