@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-@export var speed: float = 50.0
+@export var speed: float = 80.0
 var active: bool = false # si el jugador no esta en el elevador
 
 

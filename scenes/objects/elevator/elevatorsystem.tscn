@@ -27,6 +27,17 @@ texture = ExtResource("1_fd2tl")
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_f5whj")
 
+[node name="StaticBody2D" parent="." instance=ExtResource("3_4v81q")]
+position = Vector2(0, 809)
+mass = 4000.0
+freeze = true
+freeze_mode = 1
+
+[node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D"]
+position = Vector2(0, -9)
+node_a = NodePath("../../wire16")
+node_b = NodePath("..")
+
 [node name="wire" type="RigidBody2D" parent="."]
 texture_filter = 1
 position = Vector2(0, 56)
@@ -316,13 +327,3 @@ texture = ExtResource("2_mq1nv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wire16"]
 shape = SubResource("CapsuleShape2D_riqd4")
-
-[node name="StaticBody2D" parent="." instance=ExtResource("3_4v81q")]
-position = Vector2(0, 800)
-mass = 4000.0
-freeze = true
-freeze_mode = 1
-
-[node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D"]
-node_a = NodePath("../../wire16")
-node_b = NodePath("..")
